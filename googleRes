@@ -1,0 +1,17 @@
+import java.io.IOException;
+import java.net.MalformedURLException;
+
+import com.gargoylesoftware.htmlunit.BrowserVersion;
+import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
+import com.gargoylesoftware.htmlunit.WebClient;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
+
+public class googleRes 
+{
+	public static void main(String[] args) throws FailingHttpStatusCodeException, MalformedURLException, IOException
+	{
+		WebClient webClient = new WebClient(BrowserVersion.CHROME);
+		HtmlPage page = webClient.getPage("https://finance.yahoo.com/quote/TSLA?p=TSLA");
+		System.out.println(page.getHtmlPageOrNull());
+	}
+}
